@@ -117,6 +117,12 @@ export async function pingProgram(programName: string) {
     [localKeypair]
   );
 
+  console.log(instruction);
+
+  console.log(
+    `clientPubKey is ${clientPubKey}, localKeypair is ${localKeypair.publicKey}`
+  );
+
   console.log(`Ping successful.`);
 }
 
@@ -124,6 +130,8 @@ export async function pingProgram(programName: string) {
 Run the example (main).
 */
 export async function example(programName: string, accountSpaceSize: number) {
+  console.log(`Account space size is ${accountSpaceSize}`);
+
   await connect();
   await getLocalAccount();
   await getProgram(programName);
